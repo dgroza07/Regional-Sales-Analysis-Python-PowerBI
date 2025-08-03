@@ -107,9 +107,9 @@ After cleaning and exporting the dataset from Python, the data was loaded into P
 
 > 📁 `.pbix` file and screenshots included in `dashboards/`
 <img width="1387" height="777" alt="Executive Overview" src="https://github.com/user-attachments/assets/01c11e64-6157-4c0a-8759-4ae12e10feac" />
-<img width="1387" height="777" alt="Product   Channel Performance" src="https://github.com/user-attachments/assets/73b58778-76e4-4d19-be4d-e7fd0b52ff9b" />
-<img width="1387" height="782" alt="Geographics   Customer Insights Top 5" src="https://github.com/user-attachments/assets/b3fb3fd5-37fb-4135-be3b-50ee62812aa7" />
-<img width="1386" height="776" alt="Geographic   Customer Insights Bottom 5" src="https://github.com/user-attachments/assets/53e14969-1e39-4dd2-9131-f34f06f23a1d" />
+<img width="1385" height="780" alt="Product   Channel Performance" src="https://github.com/user-attachments/assets/45629216-b069-42da-bd8f-b9ec40b447d3" />
+<img width="1386" height="786" alt="Geographics   Customer Insights Top 5" src="https://github.com/user-attachments/assets/08aad138-0e49-4ecf-bd3d-8c96a5cfac80" />
+<img width="1387" height="778" alt="Geographic   Customer Insights Bottom 5" src="https://github.com/user-attachments/assets/74983885-3f47-46e2-a7db-21bc1e28e328" />
 <img width="1391" height="778" alt="Filter Page" src="https://github.com/user-attachments/assets/9b7d0604-ce0a-4ca1-a3d5-74a3957b67ea" />
 
 ---
