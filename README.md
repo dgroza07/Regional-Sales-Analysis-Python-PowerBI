@@ -62,7 +62,7 @@ Over 15 visualizations were developed to explore trends and segment insights:
 | **Regional Margin Map** | Northeast showed highest margin %, South had widest margin variability |
 
 > Tools: `Pandas`, `Seaborn`, `Plotly`, `Matplotlib`  
-> Environment: **Google Colab** (not Jupyter Notebook)
+> Environment: **Google Colab**
 > **Charting Libraries**: Matplotlib, Seaborn, Plotly Express
 <img width="1472" height="875" alt="Monthly Sales Revenue Trend Analysis" src="https://github.com/user-attachments/assets/81de8522-f413-4c7f-aa0b-5a1cbc3b28b0" />
 <img width="1402" height="747" alt="Total Monthly Sales Revenue Trend Analysis (All Years)" src="https://github.com/user-attachments/assets/aa1a0284-9c08-41b0-9e32-907c1b193bc7" />
