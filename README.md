@@ -1,71 +1,68 @@
 # 🧭 Regional Sales Analysis (Python + Power BI Project)
 
-This end-to-end project analyzes five years of B2B sales data across the U.S. to uncover regional revenue drivers, product profitability, customer segmentation, and performance gaps relative to budgeted expectations. The analysis integrates **Python for exploratory analytics and data storytelling**, and **Power BI for executive-level visualization**.
+This comprehensive analytics project explores over **64,000 rows of sales data** across the United States from 2014 to 2018. It involves full-cycle analysis: from **data extraction, cleaning, and merging of 5 distinct tables**, to **insight generation in Python via Google Colab**, and **executive dashboard storytelling in Power BI**.
 
 ---
 
-## 📊 Project Overview
+## 🧩 Problem Statement & Objective
 
-📁 **Data Source**: Multi-sheet Excel workbook (Orders, Customers, Products, Regions, Budgets)  
-⏱️ **Period Covered**: 2014–2018  
-🗺️ **Scope**: United States – All 50 states  
-🎯 **Business Goal**: Equip leadership with insights to optimize territory performance, channel strategy, and customer targeting
+**Problem Statement**  
+Acme Co needed to assess four years of regional sales performance to understand revenue and profit drivers, detect seasonal and geographic trends, and evaluate underperformance against budgeted expectations.
 
----
-
-## 🧠 Business Questions Answered
-
-- Which states, regions, and channels generate the most revenue and profit?
-- How are our top-performing products and customers distributed geographically?
-- Which customer segments contribute the most vs. least profit?
-- How do actual sales compare to 2017 budget expectations?
-- Where can we improve cost efficiency or increase margins?
+**Objective**  
+The goal was to deliver a dual-layered analytics product—technical EDA in Python and executive-ready visuals in Power BI—to highlight:
+- Performance discrepancies across geographies
+- High- vs. low-performing products and customers
+- Budget adherence and forecasting trends
+- Profit margin and cost structure inefficiencies
 
 ---
 
-## 🛠️ Tools & Technologies
+## 🔍 Dataset Overview
 
-| Category        | Tools Used                                     |
-|----------------|-------------------------------------------------|
-| Data Handling   | Python (Pandas, NumPy), Excel                  |
-| Visualization   | Matplotlib, Seaborn, Plotly, Power BI          |
-| Mapping         | Plotly Choropleth, Power BI Filled Maps        |
-| Dashboarding    | Power BI with bookmarks and interactivity      |
-| Reporting       | Jupyter Notebook (Google Colab), GitHub, LinkedIn |
+| Sheet / Table      | Description                                        |
+|--------------------|----------------------------------------------------|
+| Sales Orders       | Transaction-level sales data (main fact table)     |
+| Customers          | Customer location, state, and channel              |
+| Products           | Product SKUs, category, unit price, cost           |
+| Regions            | Mapping states into larger US regions              |
+| Budgets            | 2017 forecasted sales by state                     |
 
----
-
-## 🧾 Dataset Breakdown
-
-| Sheet Name          | Description                                 |
-|---------------------|---------------------------------------------|
-| Sales Orders        | ~3,000 rows of order-level transactional data |
-| Customers           | Customer ID, Region, and State alignment     |
-| Products            | Product categories, unit prices, and costs   |
-| Regions / State Map | Regional grouping and state matching         |
-| Budgets             | 2017 State-level budget vs. actual data      |
+**Total Volume**: ~64,000 rows  
+**Merge Complexity**: Required aligning customer IDs, product IDs, and state keys across five tables to construct an integrated analytical base.
 
 ---
 
-## 🔍 Python EDA Highlights (15+ Visuals)
+## 🧹 Data Cleaning & Wrangling
 
-Python was used to:
-- **Clean, transform, and merge** 5 different sheets
-- **Create new metrics**: `profit`, `margin %`, `revenue per unit`, `customer tiering`
-- **Analyze sales trends**: monthly, seasonal, regional
-- **Compare budget vs. actuals**
+Performed entirely in **Google Colab**, the data wrangling involved:
 
-### 📌 Key Visuals
+- Handling null values and standardizing date/time formats
+- Converting financial figures from string/object to float
+- Creating derived columns like `profit`, `margin (%)`, `unit revenue`, and `customer tier`
+- Standardizing column naming conventions
+- Validating integrity after multi-table joins with `.merge()` across key relationships
+- Aggregating, grouping, and filtering to prepare for visual storytelling
 
-| 📊 Visualization | 💡 Insight |
-|------------------|------------|
-| **Choropleth Map: Sales by State** | CA, TX, IL dominate revenue ($200M+), but not always margin leaders |
-| **Dual Bar: Top vs. Bottom Customers** | 10 customers generated 40% of revenue; bottom tier often unprofitable |
-| **Bubble Chart: Customer Profitability** | Revealed hidden inefficiencies — high volume but low-margin clients |
-| **Line Chart: Monthly Revenue Trends** | Consistent Q4 spikes; Feb and Aug underperform |
-| **Heatmap: Product vs. Region** | Uneven product penetration across states; some SKUs are regionally dominant |
+---
 
-> **Total Visuals**: 15  
+## 🧠 Python EDA (Google Colab): Key Visuals & Insights
+
+Over 15 visualizations were developed to explore trends and segment insights:
+
+| Visualization | Key Insights |
+|---------------|--------------|
+| **Choropleth Map: Revenue by State** | CA, TX, IL led in revenue, but high cost-to-revenue ratios lowered margin |
+| **Profit vs. Revenue by State** | Some low-revenue states had higher profit efficiency (e.g., MA, NJ) |
+| **Monthly Revenue Line Chart** | Q4 surges yearly; Feb and Aug consistently underperform |
+| **Product-Level Performance** | Certain SKUs (like Product B and C) had high sales but thin margins |
+| **Customer Profitability Bubble Chart** | High-volume clients didn’t always yield high profit—detected margin erosion |
+| **Top vs. Bottom Customers** | Bottom 10 customers consistently incurred losses—candidate for price restructuring |
+| **Budget vs. Actual State Bar Chart** | Budget misses in FL, NC, and MI triggered follow-up opportunity flags |
+| **Regional Margin Map** | Northeast showed highest margin %, South had widest margin variability |
+
+> Tools: `Pandas`, `Seaborn`, `Plotly`, `Matplotlib`  
+> Environment: **Google Colab** (not Jupyter Notebook)
 > **Charting Libraries**: Matplotlib, Seaborn, Plotly Express
 <img width="1472" height="875" alt="Monthly Sales Revenue Trend Analysis" src="https://github.com/user-attachments/assets/81de8522-f413-4c7f-aa0b-5a1cbc3b28b0" />
 <img width="1402" height="747" alt="Total Monthly Sales Revenue Trend Analysis (All Years)" src="https://github.com/user-attachments/assets/aa1a0284-9c08-41b0-9e32-907c1b193bc7" />
@@ -86,42 +83,57 @@ Python was used to:
 
 ---
 
-## 📊 Power BI Dashboard (Executive Layer)
+## 📊 Power BI Dashboard: Executive Visual Layer
 
-Power BI transformed the cleaned dataset into a **multi-tab interactive dashboard**, optimized for stakeholder presentation.
+After cleaning and exporting the dataset from Python, the data was loaded into Power BI to create an executive-ready dashboard with 3 interactive tabs:
 
-### Tabs Included:
-- **Executive Overview**: KPI cards, YoY trends, revenue map
-- **Product & Channel Performance**: Top-selling SKUs, margin bands, channel efficiency
-- **Geographic & Customer Insights**: Regional breakdown, customer tiers, sales by state
+### 1️⃣ Executive Overview
+- KPIs: Total Revenue, Profit, Margin %, Total Orders
+- Monthly trend line for revenue and profit
+- Map visualization of revenue and margin by state
 
-### Features Used:
-- DAX Measures & Calculated Columns
-- Bookmarks and Navigation Buttons
-- Filters for Region, Year, Product Category
-- KPI Cards, Line Graphs, Bar Charts, Maps
+### 2️⃣ Product & Channel Performance
+- Bar chart: Profit per product and per channel
+- KPI cards: Best-selling product, channel with highest margin
+- Segmentation by unit price and cost structures
+
+### 3️⃣ Geographic & Customer Insights
+- Map of customer-level revenue contribution
+- Customer tiers based on total sales
+- Margin analysis by customer and state
+
+> All visuals are interactive, filterable by region, year, channel, and customer tier  
+> DAX measures were created to calculate profit, unit margin, and conditional formatting
 
 > 📁 `.pbix` file and screenshots included in `dashboards/`
 <img width="1387" height="777" alt="Executive Overview" src="https://github.com/user-attachments/assets/01c11e64-6157-4c0a-8759-4ae12e10feac" />
 <img width="1387" height="777" alt="Product   Channel Performance" src="https://github.com/user-attachments/assets/73b58778-76e4-4d19-be4d-e7fd0b52ff9b" />
-<img width="1386" height="782" alt="Geographics   Customer Insights Top 5" src="https://github.com/user-attachments/assets/835de0bb-4a61-4b6f-9748-883a111af7ef" />
+<img width="1387" height="782" alt="Geographics   Customer Insights Top 5" src="https://github.com/user-attachments/assets/b3fb3fd5-37fb-4135-be3b-50ee62812aa7" />
 <img width="1386" height="776" alt="Geographic   Customer Insights Bottom 5" src="https://github.com/user-attachments/assets/53e14969-1e39-4dd2-9131-f34f06f23a1d" />
 <img width="1391" height="778" alt="Filter Page" src="https://github.com/user-attachments/assets/9b7d0604-ce0a-4ca1-a3d5-74a3957b67ea" />
 
 ---
 
-## 📈 Strategic Insights
+## 🎯 Strategic Outcomes
 
-✅ **Geographic Focus**: Concentrated revenue in California, Texas, and Illinois — but margin efficiency was highest in select Northeast states  
-✅ **Customer Profitability**: A small fraction of customers contributed outsized profit — perfect for targeted retention  
-✅ **Channel Analysis**: Certain channels had high volume but lower margin — opportunity for pricing review  
-✅ **Product Gaps**: Strong regional skew toward specific SKUs — signals unmet demand in low-penetration areas  
-✅ **Budget Performance**: Several high-opportunity states underperformed vs. 2017 budget — worth strategic review
+- **Targetable High-Margin Regions Identified**: Northeastern states showed highest profit % with moderate revenue—opportunity to scale
+- **Customer Segmentation Enabled**: Tiers defined for profitability, driving account prioritization strategies
+- **Channel Optimization Detected**: Volume ≠ profit — Channel C had highest unit profit despite lower overall revenue
+- **Budget Gap Regions Flagged**: NC, MI, and FL fell short of budget projections—triggering review of pipeline and execution
+- **Executive Dashboard Delivered**: Fully functional and polished Power BI dashboard aligned to business stakeholder needs
 
+---
 
+## 🧠 Recruiter & Hiring Manager Takeaway
 
+This project simulates a real-world BI analyst workflow:
 
+- Extracting and merging large datasets (64,000+ rows across 5 tables)
+- Deep analysis using Python in Google Colab
+- Delivering executive visuals in Power BI
+- Bridging business KPIs with technical storytelling
 
+Perfect for roles involving **Sales Analytics, Business Intelligence, Data Analysis**, and **Operations Strategy**.
 
 
 
